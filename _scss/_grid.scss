@@ -1,0 +1,83 @@
+/*============================
+=            Grid            =
+============================*/
+/*
+
+    Author: lefoy <lefoy.net>
+    Version: 0.0.0
+    Repository: https://github.com/lefoy/grid
+
+ */
+
+// Configuration
+// ============================
+
+$grid-selector: "grid";
+$grid-row-selector: "row";
+$grid-row-wrapper-selector: "row-wrapper";
+$grid-col-selector: "col";
+$grid-col-prefix: "col-";
+$grid-width: 1140px;
+$grid-margin: 20px;
+$grid-gutter: 10px;
+$grid-columns: 16;
+
+// Grid system
+// ============================
+
+.#{$grid-selector} {
+
+    // Basic styles
+    width: $grid-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    .#{$grid-row-selector} {
+        padding-left: $grid-margin;
+        padding-right: $grid-margin;
+    }
+
+    .#{$grid-row-selector}:before,
+    .#{$grid-row-selector}:after {
+        content: " ";
+        display: table;
+    }
+
+    .#{$grid-row-selector}:after {
+        clear: both;
+    }
+
+    .#{$grid-row-wrapper-selector} {
+        margin-left: $grid-gutter / 2 * -1;
+        margin-right: $grid-gutter / 2 * -1;
+    }
+
+    .#{$grid-col-selector} {
+        float: left;
+        margin-left: $grid-gutter / 2;
+        margin-right: $grid-gutter / 2;
+    }
+
+    // Relative columns
+    $numbers: ("half" 2) ("tier" 3) ("quarter" 4);
+
+    @each $i in $numbers {
+        .#{nth($i, 1)} {
+            $column-percent: 100% / nth($i, 2);
+            width: calc(#{$column-percent} - #{$grid-gutter});
+        }
+    }
+
+    // Grid columns
+    @for $i from 1 through $grid-columns {
+        .#{$grid-col-prefix}#{$i} {
+            $column-percent: $i / $grid-columns * 100%;
+            width: calc(#{$column-percent} - #{$grid-gutter});
+        }
+    }
+
+    // Responsive
+    @media screen and (max-width: 1140px) {
+        width: auto;
+    }
+}
