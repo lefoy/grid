@@ -1,7 +1,7 @@
 # Setup
-title           : Grid
-description     : "Just another sass grid system"
-keywords        : "grid system sass"
+title           : Simple Grid
+description     : "Just another simple sass grid system"
+keywords        : "simple grid system sass"
 url             : http://lefoy.net/grid
 
 author          : lefoy
