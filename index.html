@@ -7,7 +7,43 @@ title: Home
 
 <div class="project-content">
     <div class="project-content-wrapper l-page-wrapper">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aliquid consectetur repellendus quasi accusantium nisi dignissimos ullam aut in incidunt nostrum ex, magnam aspernatur labore quia iste et consequatur! Earum laudantium vero inventore id tempore. Autem ipsa nobis tempora minima, assumenda ea numquam labore ab dolor aspernatur dolorum obcaecati consequuntur temporibus vel consequatur sint expedita distinctio accusantium sapiente ex est fugit quidem corporis vero consectetur. Ea eveniet consectetur quisquam rem voluptates ducimus sequi minima assumenda laboriosam, odit vitae praesentium quod adipisci nostrum sint, labore illum dicta aut eligendi.</p>
+        <p>This is just another grid system. I do not pretend that it is better than the others available, it simply fills my needs.</p>
+
+        <hr>
+
+        <h2>HTML Markup</h2>
+
+        <div class="highlight">
+            <pre><code class="language-markup" data-lang="markup">&lt;div class=&quot;grid&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;row-wrapper&quot;&gt;
+            &lt;div class=&quot;col half&quot;&gt;half&lt;/div&gt;
+            &lt;div class=&quot;col half&quot;&gt;half&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row-wrapper&quot;&gt;
+            &lt;div class=&quot;col col-8&quot;&gt;col-8&lt;/div&gt;
+            &lt;div class=&quot;col col-8&quot;&gt;col-8&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <h2>Configuration</h2>
+
+        <div class="highlight">
+            <pre><code class="language-scss" data-lang="scss">// Configuration
+// ============================
+
+$grid-selector: "grid";
+$grid-row-selector: "row";
+$grid-row-wrapper-selector: "row-wrapper";
+$grid-col-selector: "col";
+$grid-col-prefix: "col-";
+$grid-width: 1140px;
+$grid-margin: 20px;
+$grid-gutter: 10px;
+$grid-columns: 16;</code></pre>
+        </div>
     </div>
 
     <div class="grid">
